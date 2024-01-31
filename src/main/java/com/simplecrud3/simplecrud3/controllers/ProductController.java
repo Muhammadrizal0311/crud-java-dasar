@@ -14,8 +14,9 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+//    @ExceptionHandler
     @PostMapping
-    public Product create(@Valid @RequestBody Product product, Errors errors){
+    public Product create(@Valid @RequestBody Product product){
         return productService.saveProduct(product);
     }
 

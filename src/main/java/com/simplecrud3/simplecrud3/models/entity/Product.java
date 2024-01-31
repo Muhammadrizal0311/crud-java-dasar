@@ -1,8 +1,10 @@
 package com.simplecrud3.simplecrud3.models.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @Entity
@@ -16,7 +18,8 @@ public class Product implements Serializable {
     private int id;
 
     @Column(name="product_name", length = 100)
-    @NotEmpty(message = "Nama tidak boleh kosong !")
+//    @NotEmpty(message = "Nama tidak boleh kosong !")
+    @NotBlank(message = "Nama Tidak Boleh Kosong")
     private String nama;
 
     @Column(name = "product_description", length = 500)
